@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+:root {
+  --canvas: #faf3ec;
+  --surface: #fffaf5;
+  --line: #ddd3c5;
+  --ink: #1c1c17;
+  --ink-soft: #3d3c35;
+  --ink-muted: #6e6b60;
+  --accent: #4a5e23;
+  --accent-strong: #3c4d1b;
+  --accent-tint: #e6e9d4;
+}
+
+@theme {
+  --breakpoint-wide: 87.5rem;
+  --animate-glow: glow-pulse 4.5s ease-in-out infinite;
+  --animate-sheen: sheen 7s ease-in-out infinite;
+  --animate-flag: flag-wave 2.4s ease-in-out infinite;
+
+  @keyframes sheen {
+    0%,
+    55% {
+      transform: translateX(-120%) skewX(-18deg);
+    }
+    100% {
+      transform: translateX(320%) skewX(-18deg);
+    }
+  }
+
+  @keyframes flag-wave {
+    0%,
+    100% {
+      transform: skewY(0deg) scaleX(1);
+    }
+    50% {
+      transform: skewY(-7deg) scaleX(0.96);
+    }
+  }
+
+  @keyframes glow-pulse {
+    0%,
+    100% {
+      opacity: 0.5;
+      transform: scale(0.94);
+    }
+    50% {
+      opacity: 0.95;
+      transform: scale(1.06);
+    }
+  }
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-muted: var(--ink-muted);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-tint: var(--accent-tint);
+  --font-sans: var(--font-figtree);
+  --font-serif: var(--font-newsreader);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+
+body {
+  background: var(--canvas);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@layer components {
+  .section-title {
+    font-family: var(--font-newsreader);
+    font-size: 2.25rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+  }
+}
+
+/* The portrait shows fully above the circle's middle (so the head can rise out
+   of the frame) and is clipped to the circle below it. */
+.portrait-pop {
+  mask-image:
+    linear-gradient(#000, #000),
+    radial-gradient(circle calc(var(--portrait) / 2) at 50% calc(var(--portrait) * 0.75), #000 99.5%, transparent 100%);
+  mask-size:
+    74% calc(var(--portrait) * 0.75),
+    100% 100%;
+  mask-position:
+    50% 0,
+    0 0;
+  mask-repeat: no-repeat;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
