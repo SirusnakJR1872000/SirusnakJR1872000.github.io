@@ -443,9 +443,13 @@ function FeaturedCard({ project }: { project: Project }) {
             </ul>
             <a
               href={project.href}
+              {...(project.live && {
+                target: "_blank",
+                rel: "noopener noreferrer",
+              })}
               className="group/cta inline-flex h-[50px] items-center gap-3 rounded-full bg-[#f7f1e3] px-7 text-[1.05rem] font-semibold text-[#2d3a17] shadow-[0_10px_24px_rgb(20_30_5/0.3)] transition hover:-translate-y-0.5 hover:bg-white"
             >
-              View Case Study
+              {project.live ? "Visit Live App" : "View Case Study"}
               <ArrowRight
                 className="size-5 transition-transform group-hover/cta:translate-x-1"
                 aria-hidden

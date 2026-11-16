@@ -20,6 +20,8 @@ export const site = {
     linkedin: "https://www.linkedin.com/in/gaurav-patil-yog/",
     email: "gmsd187@gmail.com",
     resume: "/resume.pdf",
+    resumePage: "/resume/",
+    journey: "/journey/",
   },
 
   stats: {
@@ -138,7 +140,8 @@ export const site = {
           "Learning-to-Rank model to predict race finish order using race features, historical performance, and circuit context.",
         stats: [], // TODO: add results, e.g. ranking accuracy
         tags: ["XGBoost", "Flask", "Jolpica API", "OpenF1"],
-        href: "#", // TODO: case study, demo or repo URL
+        href: "https://f1-predict-beta.vercel.app/",
+        live: true,
         art: "flag",
       },
     ] as Project[],
@@ -148,12 +151,14 @@ export const site = {
     eyebrow: "About me",
     heading: { lead: "Two Sides of", emphasis: "Me" },
     summary:
-      "I’m an AI engineer who loves building real-world systems with data and GenAI — and an equally curious person who finds balance in travel, music, motorsports, and the little things that keep me creative and grounded.",
+      "An AI engineer who builds real-world ML systems and GenAI products, and a curious explorer who finds inspiration in travel, music, motorsports, and the little adventures in between.",
     portrait: {
       src: "/images/gaurav-portrait.webp",
       alt: "Gaurav Patil smiling, arms crossed",
     },
-    // Item `icon`: layers, bars, gear, shield, plane, music, flag, camera.
+    // Illustrated scene shown behind the portrait.
+    scene: "/images/about-scene.webp",
+    // Item `icon`: code, layers, gear, shield, plane, music, flag, camera.
     professional: {
       eyebrow: "The Professional",
       title: "AI Engineer & Builder",
@@ -162,22 +167,22 @@ export const site = {
       items: [
         {
           title: "GenAI & RAG Systems",
-          detail: "LLMs, agentic workflows and knowledge systems",
-          icon: "layers",
+          detail: "LLMs, agentic workflows",
+          icon: "code",
         },
         {
           title: "Applied Machine Learning",
-          detail: "Churn, next-best-product, uplift & customer intelligence",
-          icon: "bars",
+          detail: "Churn, next-best-product, uplift",
+          icon: "layers",
         },
         {
           title: "MLOps & Production",
-          detail: "Scalable, reliable and cost-efficient AI deployments",
+          detail: "Scalable and reliable AI systems",
           icon: "gear",
         },
         {
           title: "Domain AI Solutions",
-          detail: "Marketing, retail and clinical AI with guardrails",
+          detail: "Marketing, retail and clinical AI",
           icon: "shield",
         },
       ],
@@ -186,7 +191,7 @@ export const site = {
       eyebrow: "The Personal",
       title: "A Curious Explorer",
       summary:
-        "Beyond code and models, I’m a traveler, a music lover, and a motorsport fanatic who finds inspiration in experiences, not just datasets.",
+        "Beyond code and models, I’m a traveler, music lover, and motorsport fan who finds inspiration in experiences, not just datasets.",
       items: [
         {
           title: "Travel",
@@ -195,7 +200,7 @@ export const site = {
         },
         {
           title: "Music",
-          detail: "Curating playlists for every mood and moment",
+          detail: "Curating playlists for every mood",
           icon: "music",
         },
         {
@@ -210,7 +215,7 @@ export const site = {
         },
       ],
     },
-    // Stat `icon`: calendar, layers, users, rocket.
+    // Stat `icon`: calendar, layers, users, chart.
     glance: {
       label: "At a Glance",
       stats: [
@@ -218,14 +223,84 @@ export const site = {
         { value: "10+", label: "Production systems", icon: "layers" },
         { value: "2+", label: "Domains (Retail, Clinical)", icon: "users" },
         {
-          value: "Always Learning",
-          label: "New models, tools and ideas",
-          icon: "rocket",
+          value: "Business Impact",
+          label: "Uplift · Retention · Efficiency",
+          icon: "chart",
         },
       ],
     },
   },
 
+  journey: {
+    eyebrow: "My Journey",
+    heading: {
+      lineOne: "From learning algorithms to",
+      lead: "building",
+      emphasis: "intelligent systems.",
+    },
+    paragraphs: [
+      "My journey into AI began at the University of Illinois, where I explored computer vision and machine learning through research. What started with training detection models using YOLOv5 and Mask R-CNN gradually evolved into a deeper interest in building systems that could solve real-world problems.",
+      "From optimizing GPU inference and developing predictive models to engineering production-grade AI applications, every experience has shaped how I approach technology today.",
+    ],
+    // What lights up in the neural network, in the order it was learned.
+    clusters: [
+      {
+        name: "Computer Vision",
+        tools: "YOLOv5 · Mask R-CNN · OpenCV · SWIN Transformer",
+        project: "Posture correction platform",
+      },
+      {
+        name: "ML",
+        tools: "XGBoost · CatBoost · scikit-learn · PySpark",
+        project: "Customer Intelligence",
+      },
+      {
+        name: "MLOps",
+        tools: "AWS SageMaker · Lambda · CI/CD · ONNX",
+        project: "Automated model releases on AWS",
+      },
+      {
+        name: "RAG",
+        tools: "LangChain · FAISS · Pinecone · Gemini",
+        project: "RAG and multi-agent systems",
+      },
+    ],
+    milestones: [
+      {
+        year: "2022",
+        title: "The Foundation",
+        detail: "First steps into ML research and computer vision.",
+        art: "pixels",
+        impact: "35% higher recognition accuracy",
+        tools: ["YOLOv5", "Mask R-CNN", "ONNX"],
+      },
+      {
+        year: "2023",
+        title: "Applied AI & Analytics",
+        detail:
+          "Data analytics, predictive modelling and real-world AI applications.",
+        art: "stairs",
+        impact: "40% less reporting time",
+        tools: ["Power BI", "Matplotlib", "Seaborn"],
+      },
+      {
+        year: "2024",
+        title: "Production & Scale",
+        detail: "Production ML, GPU optimization and cloud deployments.",
+        art: "bars",
+        impact: "40% faster deployments",
+        tools: ["XGBoost", "AWS SageMaker", "SWIN Transformer"],
+      },
+      {
+        year: "2025 – Present",
+        title: "GenAI & Distributed Systems",
+        detail: "Building GenAI, multi-agent and enterprise AI systems.",
+        art: "wave",
+        impact: "80% less manual verification",
+        tools: ["LangChain", "RAG", "PySpark", "NetworkX"],
+      },
+    ],
+  },
   experienceIntro: {
     eyebrow: "Experience",
     heading: {
@@ -561,5 +636,7 @@ export type Project = {
   }[];
   tags: string[];
   href: string;
+  /** The link is a running app, so it opens in a new tab. */
+  live?: boolean;
   art: "doc" | "bars" | "chat" | "flag";
 };
